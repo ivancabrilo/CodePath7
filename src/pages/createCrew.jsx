@@ -11,14 +11,11 @@ export function CreateCrew({supabase}) {
   const [color, setColor] = useState("");
 
   const handleSubmit = () => {
-    console.log("crewName: ", crewName);
-    console.log("speed: ", speed);
-    console.log("color: ", color);
     handleCreate();
   };
 
   const handleCreate = async () => {
-    const { data, error } = await supabase.from("crew").insert([{ name: crewName, speed: speed, color: color }]);
+    const { data, error } = await supabase.from("crew").insert([{name: crewName, speed: speed, color: color }]);
   };
 
 

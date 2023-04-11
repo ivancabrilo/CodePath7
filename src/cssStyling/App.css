@@ -25,28 +25,39 @@
     gap: 30px;
     color: rgb(0, 23, 44);
     border-radius: 10px;
-    box-shadow: 0px 0px 20px 0px rgb(140, 139, 139);
+    box-shadow: 0px 0px 20px 0px rgb(177, 177, 177);
 
 }
 .page{
 text-align: center;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 20px;
+}
+.page img{
+    width: 60%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 0px rgb(140, 139, 139);
 }
 
-.createCrew{
+.createCrew, .update{
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 100px;
-}git push -u origin main
+}
 
 .gallery{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 50px;
+    gap: 20px;
 }
 
-.createCrew form{
+.createCrew form, .update form{
     display: flex;
     align-items: center;
     gap: 50px;
@@ -67,15 +78,36 @@ text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-    padding: 10px;
+    gap: 5px;
     background-color: rgb(175, 225, 225);
     border-radius: 10px;
     box-shadow: 0px 2px 10px 0px rgb(180, 180, 180);
+    padding: 10px 25px;
+    position: relative;
 }
 
 .cardWrapper{
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+}
+
+.currentInfo{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.deleteBtn{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 2px 5px;
+    margin: 0;
+    background-color: brown;
+    text-align: center;
+    border-radius: 20%;
+    color: white;
+    cursor: pointer;
 }

@@ -1,10 +1,23 @@
+import {Link } from "react-router-dom"
+export function Card({id, name, speed, color, supabase}){
 
-export function Card({name, speed, color}){
+    const handleDelete = async () => {
+        const { data, error } = await supabase
+            .from("crew")
+            .delete()
+            .eq("id", id);
+
+            //reload page
+            window.location.reload();
+    };
+
     return (
         <div className="card">
-            <h1>Name: {name}</h1>
-            <h2>Speed: {speed}</h2>
-            <h2>Color: {color}</h2>
+            <h2>Name: {name}</h2>
+            <h3>Speed: {speed}</h3>
+            <h3>Color: {color}</h3>
+            <Link to={`/about/${id}`}>About</Link>
+            <button onClick={handleDelete} className="deleteBtn">X</button>
         </div>
     )
 }
