@@ -1,0 +1,15 @@
+ html, body {
+    height: 100%;
+    width: 100%;
+    /* overflow:hidden; */
+}
+
+
+#root{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    align-items: start;
+}
