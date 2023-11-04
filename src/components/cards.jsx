@@ -21,3 +21,5 @@ export function Card({id, name, speed, color, supabase}){
         </div>
     )
 }
+
+//later
