@@ -10,7 +10,6 @@ export function Update({ supabase }) {
     name: "",
     speed: "",
     color: "",
-
   });
   const handleSubmit = () => {
     handleUpdate();
@@ -22,24 +21,24 @@ export function Update({ supabase }) {
       .update({ name: crewName, speed: speed, color: color })
       .eq("id", id);
 
-      handleRead();
+    handleRead();
   };
 
   const handleRead = async () => {
     const { data, error } = await supabase.from("crew").select().eq("id", id);
     data.map((e) => {
-        setCurrInfo({
-            id: e.id,
-            name: e.name,
-            speed: e.speed,
-            color: e.color,
-        });
-        });
+      setCurrInfo({
+        id: e.id,
+        name: e.name,
+        speed: e.speed,
+        color: e.color,
+      });
+    });
   };
 
   useEffect(() => {
     handleRead();
-    }, []);
+  }, []);
 
   return (
     <div className="update">
@@ -69,7 +68,7 @@ export function Update({ supabase }) {
         </div>
         <div className="formBoxes">
           <select onChange={(e) => setColor(e.target.value)}>
-            <option>Select a crew color</option>
+            <option>Select color</option>
             <option value="red">Red</option>
             <option value="blue">Blue</option>
             <option value="green">Green</option>

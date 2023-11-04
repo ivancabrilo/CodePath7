@@ -29,7 +29,7 @@ export function AboutCrew({ supabase }) {
     <div>
       {crew ? (
         <div>
-          <h1>CrewMate: {crew.name}</h1>
+          <h1>TeamMate: {crew.name}</h1>
           <div className="stats">
             <h1>Stats:</h1>
             <h2>Color: {crew.color}</h2>
@@ -37,14 +37,9 @@ export function AboutCrew({ supabase }) {
           </div>
           <div className="feedback">
             {crew.speed > 5 ? (
-              <h2>
-                Wow, this Crewmate is super fast, that will be helpful! 🏃💨
-              </h2>
+              <h2>Fast & Furious!⚡🔥</h2>
             ) : (
-              <h2>
-                You may want to find a Crewmate with more speed, this one is
-                kind of slow 😬
-              </h2>
+              <h2>This teammate can only race against a 🐢</h2>
             )}
           </div>
         </div>
@@ -52,7 +47,7 @@ export function AboutCrew({ supabase }) {
         <h1>loading...</h1>
       )}
       <Link to={`/update/${crew.id}`}>
-      <button>Edit CrewMate</button>
+        <button>Edit TeamMate</button>
       </Link>
     </div>
   );

@@ -6,18 +6,17 @@ export function Gallery({ supabase }) {
 
   const readCrew = async () => {
     const { data, error } = await supabase.from("crew").select();
-     data.map((e) => {
-          setCrew((prevCrew) => [
-            {
-              id : e.id,
-              name: e.name,
-              speed: e.speed,
-              color: e.color,
-            },
-            ...prevCrew
-          ]);
-        
-        });
+    data.map((e) => {
+      setCrew((prevCrew) => [
+        {
+          id: e.id,
+          name: e.name,
+          speed: e.speed,
+          color: e.color,
+        },
+        ...prevCrew,
+      ]);
+    });
   };
 
   return (
@@ -27,11 +26,17 @@ export function Gallery({ supabase }) {
       <div className="cardWrapper">
         {crew &&
           crew.map((cr) => {
-            return <Card supabase={supabase} id={cr.id} name={cr.name} speed={cr.speed} color={cr.color} />;
+            return (
+              <Card
+                supabase={supabase}
+                id={cr.id}
+                name={cr.name}
+                speed={cr.speed}
+                color={cr.color}
+              />
+            );
           })}
       </div>
     </div>
   );
-
-
 }

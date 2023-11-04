@@ -3,11 +3,8 @@ import image from "../assets/team.jpg";
 export function Home() {
   return (
     <div className="page">
-      <h1>Welcome to the Crewmate Creator!</h1>
-      <h3>
-        Here is where you can create your very own set of crewmates before
-        sending them off into space!
-      </h3>
+      <h1>Hi visitor, welcome to team creator!</h1>
+      <h3>Create your own team, that will be assigned a secret mission</h3>
       <img src={image} alt="" />
     </div>
   );

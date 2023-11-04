@@ -1,31 +1,39 @@
-import React from "react";
-import { useState, useEffect } from "react";
-// const supabaseUrl = "https://fewzacicwrajmacpxkxo.supabase.co";
-// const supabaseKey = import.meta.env.VITE_APP_API_KEY;
+import React, { useState } from "react";
 
-
-export function CreateCrew({supabase}) {
-
+export function CreateCrew({ supabase }) {
   const [crewName, setCrewName] = useState("");
   const [speed, setSpeed] = useState("");
-  const [color, setColor] = useState("");
+  const [color, setColor] = useState(""); // Add this line
 
-  const handleSubmit = () => {
-    handleCreate();
+  const handleSubmit = async (e) => {
+    // Add the async keyword if handleCreate is an async function
+    e.preventDefault(); // Prevent default form submit action
+    await handleCreate(); // Await the async function call
   };
 
   const handleCreate = async () => {
-    const { data, error } = await supabase.from("crew").insert([{name: crewName, speed: speed, color: color }]);
+    const { data, error } = await supabase
+      .from("crew")
+      .insert([{ name: crewName, speed: speed, color: color }]);
+    if (error) {
+      // Handle the error appropriately
+      console.error("Error inserting data", error);
+    } else {
+      // Handle success (e.g., clear form, show message)
+      console.log("Data inserted", data);
+    }
   };
-
 
   return (
     <div className="createCrew">
-      <h1>Create a new Crew!</h1>
-      <form>
+      <h1>Create a TeamMate</h1>
+      <form onSubmit={handleSubmit}>
+        {" "}
+        {/* Change to onSubmit */}
         <div className="formBoxes">
           <label htmlFor="name">Name:</label>
           <input
+            value={crewName} // Add this to control the input
             onChange={(e) => setCrewName(e.target.value)}
             type="text"
             placeholder="Enter crew name"
@@ -34,21 +42,25 @@ export function CreateCrew({supabase}) {
         <div className="formBoxes">
           <label htmlFor="speed">Speed (km/h):</label>
           <input
+            value={speed} // Add this to control the input
             onChange={(e) => setSpeed(e.target.value)}
             type="text"
             placeholder="Enter crew speed"
           />
         </div>
         <div className="formBoxes">
-          <select onChange={(e) => setColor(e.target.value)}>
-            <option>Select a crew color</option>
+          <select value={color} onChange={(e) => setColor(e.target.value)}>
+            {" "}
+            {/* Add value to control the select */}
+            <option value="">Select color</option>{" "}
+            {/* Update the default option value */}
             <option value="red">Red</option>
             <option value="blue">Blue</option>
             <option value="green">Green</option>
           </select>
         </div>
+        <button type="submit">Create</button> {/* Change to type="submit" */}
       </form>
-      <button onClick={handleSubmit}>create</button>
     </div>
   );
 }

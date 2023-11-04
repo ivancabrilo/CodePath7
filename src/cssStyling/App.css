@@ -1,113 +1,112 @@
-
-.Dashboard{
-    background-color: rgb(255, 255, 255);
-    height: 100%;
-    width: 100%;
-    display: flex;
-    place-items: center;
-    justify-content: center;
-    align-items: start;
-    padding-left: 20%;
-    padding-right: 20%;
-    padding:2% 20% 5% 20%;
-    color: rgb(0, 23, 44);
+.Dashboard {
+  background-color: rgb(255, 255, 255);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  align-items: start;
+  padding-left: 20%;
+  padding-right: 20%;
+  padding: 2% 20% 5% 20%;
+  color: rgb(181, 26, 34);
 }
 
-.sideBard{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    left: 20px;
-    width: 15%;
-    height: 80%;
-    background-color: rgb(220, 210, 255);
-    gap: 30px;
-    color: rgb(0, 23, 44);
-    border-radius: 10px;
-    box-shadow: 0px 0px 20px 0px rgb(177, 177, 177);
-
+.sideBard {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  left: 20px;
+  width: 15%;
+  height: 80%;
+  background-color: rgb(230, 145, 40);
+  gap: 30px;
+  color: rgb(0, 23, 44);
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px 0px rgb(177, 177, 177);
 }
-.page{
-text-align: center;
-display: flex;
-flex-direction: column;
-align-items: center;
-gap: 20px;
+.page {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
-.page img{
-    width: 60%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0px 0px 20px 0px rgb(140, 139, 139);
-}
-
-.createCrew, .update{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 100px;
+.page img {
+  width: 110%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px 0px rgb(140, 139, 139);
 }
 
-.gallery{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+.createCrew,
+.update {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 100px;
 }
 
-.createCrew form, .update form{
-    display: flex;
-    align-items: center;
-    gap: 50px;
+.gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
-.formBoxes{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 10px;
-    background-color: rgb(175, 225, 225);
-    border-radius: 10px;
-    box-shadow: 0px 2px 10px 0px rgb(180, 180, 180);
-
+.createCrew form,
+.update form {
+  display: flex;
+  align-items: center;
+  gap: 50px;
 }
 
-.card{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-    background-color: rgb(175, 225, 225);
-    border-radius: 10px;
-    box-shadow: 0px 2px 10px 0px rgb(180, 180, 180);
-    padding: 10px 25px;
-    position: relative;
+.formBoxes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  background-color: rgb(195, 163, 5);
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px 0px orange;
 }
 
-.cardWrapper{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  background-color: rgb(237, 209, 156);
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px 0px rgb(180, 180, 180);
+  padding: 10px 25px;
+  position: relative;
 }
 
-.currentInfo{
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
+.cardWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-.deleteBtn{
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    padding: 2px 5px;
-    margin: 0;
-    background-color: brown;
-    text-align: center;
-    border-radius: 20%;
-    color: white;
-    cursor: pointer;
+.currentInfo {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.deleteBtn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 2px 5px;
+  margin: 0;
+  background-color: brown;
+  text-align: center;
+  border-radius: 20%;
+  color: white;
+  cursor: pointer;
 }
